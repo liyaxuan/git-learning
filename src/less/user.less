@@ -1,0 +1,92 @@
+@import "common.less";
+
+@user-item-width: @content-width;
+@user-item-margin: 8px;
+@user-pure-width: ((@user-item-width)-32-2)-4*@user-item-margin;
+
+.user-list {
+
+	box-sizing: border-box;
+	width: @user-item-width;
+	padding: 0 16px;
+	background-color: rgb(252, 252, 252);
+	border: 1px solid #dddddd;
+
+	>.item {
+
+		box-sizing: border-box;
+		width: 100%;
+		line-height: 32px;
+		padding: 16px 0;	
+		border-bottom: 1px solid #eeeeee;
+		font-size: 14px;
+
+		&.header {
+			line-height: 16px;
+			border-bottom: 2px solid #1baf79;
+		}
+
+		&.last { border-bottom: none; }
+
+		>.headimg { 
+			width: 0.20*@user-pure-width;
+			margin-right: @user-item-margin;
+			>.img {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				.bg-img();		
+			}
+		}
+
+		>.uid { 
+			width: 0.20*@user-pure-width;
+			margin-right: @user-item-margin; 
+		}
+
+		>.nickname { 
+			width: 0.20*@user-pure-width;
+			margin-right: @user-item-margin; 
+		}
+
+		>.area { 
+			width: 0.20*@user-pure-width;
+			margin-right: @user-item-margin;
+		}
+
+		>.operation { 
+			width: 0.20*@user-pure-width;
+		}
+
+		>.text {
+			height: 32px;
+			line-height: 32px;
+			font-size: 14px;
+		}
+
+		>.icon {
+			height: 32px;
+			line-height: 32px;
+			margin-right: 16px;
+			font-size: 16px;
+			&.delete:hover { color: #eb7260; }
+			&.mail:hover { color: #29aba4; }
+		}
+
+	}
+
+	>.user-detail {
+		line-height: 24px;
+		padding: 8px;
+		position: absolute;
+		background-color: #ffffff;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
+		border: 1px solid #dddddd;
+		font-size: 12px;	
+	}
+
+	>.pagination-wrapper {
+		margin: 16px 0;
+	}
+
+}

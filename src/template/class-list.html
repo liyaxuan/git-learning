@@ -1,0 +1,13 @@
+<div class="class-list">
+	<div class="header">
+		<div class="text am-text-truncate">{{search.class_name}}</div>
+		<div class="btn-group">
+			<span class="fl clickable icon material-icons" ng-click="clear()">close</span>
+			<span class="fr clickable icon material-icons" ng-show="isClosed" ng-click="toggle()">keyboard_arrow_down</span>
+			<span class="fr clickable icon material-icons" ng-show="!isClosed" ng-click="toggle()">keyboard_arrow_up</span>				
+		</div>
+	</div>
+	<div class="body" ng-show="!isClosed">
+		<div class="item clickable am-text-truncate" ng-class="{'last': $last}" ng-repeat="item in list track by $index" ng-click="select(item)">{{item}}</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="file-input">
+	<div class="container">
+		<div class="btn select clickable fl"><div class="mask"></div>选择文件</div>
+		<div class="cf"></div>
+		<div class="process" ng-show="isProcessing">
+			<div class="filename am-text-truncate fl">{{filename}}</div>
+			<div class="icon material-icons cancel clickable fr" ng-click="cancel()">close</div>
+			<div class="percent fr">{{percent}}%</div>
+			<div class="bar-wrapper fr"><div class="bar"></div></div>
+		</div>	
+	</div>
+</div>

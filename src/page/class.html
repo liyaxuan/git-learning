@@ -1,0 +1,34 @@
+<div class="class-wrapper">	
+	<div class="input-wrapper">
+		<input type="text" class="input fl" ng-model="className">
+		<div class="btn fl clickable" ng-click="submit()">新建分类</div>
+		<div class="tab fl">
+			<span class="clickable" ng-class="{'current': current=='vwork'}" ng-click="select('vwork')">官方作品</span>
+			/
+			<span class="clickable" ng-class="{'current': current=='article'}" ng-click="select('article')">官方文章</span>
+		</div>
+		<div class="cf"></div>
+	</div>
+	<div class="cf"></div>
+	<div class="class-list fl">
+	    <header>官方作品分类</header>
+	    <div class="body">
+		    <div class="class" ng-class="{'last': $last}" ng-repeat="c in vworkClass track by $index">
+		        <span class="text fl am-text-truncate">{{c}}</span>
+		        <span class="icon material-icons fr clickable" ng-click="delete('vwork', c)">close</span>
+		        <span class="cf"></span>
+		    </div> 	    	
+	    </div>
+	</div>
+	<div class="class-list fl">
+	    <header>官方文章分类</header>
+	    <div class="body">
+		    <div class="class" ng-repeat="c in articleClass track by $index">
+		        <span class="text fl am-text-truncate">{{c}}</span>
+		        <span class="icon material-icons fr clickable" ng-click="delete('article', c)">close</span>
+		        <span class="cf"></span>
+		    </div>
+	    </div> 
+	</div>
+	<div class="cf"></div>
+</div>

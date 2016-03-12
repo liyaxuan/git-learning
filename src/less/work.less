@@ -1,0 +1,115 @@
+@import "common.less";
+
+@tag-width: 64px;
+
+.file-option() {
+	line-height: 32px;
+	margin-left: 8px;
+}
+
+.work-edit-scope {
+	>.wrapper {
+		background-color: #ffffff;
+		border: 1px solid #dddddd;
+		overflow: hidden;
+
+		>.body-1 {
+			display: flex;
+			display: -webkit-flex;
+			align-items: stretch;
+			>.column {
+				box-sizing: border-box;
+				width: ((@content-width)-2)/3;
+				&.left { border-right: 1px solid #dddddd; }
+				&.right { border-left: 1px solid #dddddd; }
+				>.header {
+					line-height:32px;
+					padding: 0 16px;
+					border-bottom: 1px solid #dddddd;
+					font-size: 14px;
+				}
+				>.simditor { border :none; }
+
+				>.pagination-wrapper {
+					padding: 0 16px;
+				}
+
+				.author-list {
+					&.body {
+						padding: 16px;
+						background-color: #eeeeee;
+	
+
+					}
+	                .item {
+		                margin-bottom: 16px;
+		            }
+					.img {
+						width: 32px;
+						height: 32px;
+						margin-right: 32px;
+						border-radius: 2px;
+						.bg-img();
+					}
+					.name {
+						line-height: 32px;
+						font-size: 14px;
+					}
+					>.header {
+						margin-bottom: 16px;
+						padding: 16px;
+						background-color: rgb(238, 238, 238);
+						border-bottom: 1px solid #dddddd;
+					}
+
+				}
+
+				>.item {
+					padding: 0 16px;
+					font-size: 14px;
+					>.title {
+						line-height: 32px;
+						.file-option {
+							.file-option();
+							&.selected {
+								font-weight: bold;
+								.gray-1();
+							}
+						}
+					}
+					>.input {
+						box-sizing: border-box;
+						width: 100%;
+						height: 26px;
+						line-height: 16px;
+						padding: 4px;
+						border: 1px solid #dddddd;
+					}
+				}
+			}	
+		}
+
+		>.body-2 {
+			>.header {
+				height: 40px;
+				line-height: 40px;
+				padding: 0 16px;
+				border-top: 1px solid #dddddd;
+				border-bottom: 1px solid #dddddd;
+			}
+			>.simditor { border :none; }
+		}
+	}
+
+	>.btn {
+		width: 230px;
+		height: 48px;
+		line-height: 48px;
+		margin-top: 16px;
+		background-color: #1baf79;
+		border-radius: 2px;
+		font-size: 20px;
+		text-align: center;	
+		color: #ffffff;
+	}	
+}

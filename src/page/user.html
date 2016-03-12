@@ -1,0 +1,31 @@
+<ul class="user-list">
+	<li class="item header">
+		<div class="headimg fl">头像</div>
+		<div class="uid fl">用户名</div>
+		<div class="nickname fl">昵称</div>
+		<div class="area fl">地区</div>
+		<div class="operation fl">操作</div>
+		<div class="cf"></div>
+	</li>
+	<li class="item" ng-repeat="item in list">
+		<div class="headimg fl">
+			<div class="img" style="background-image: url('{{item.headimg}}')" ng-mouseover="open($index)" ng-mouseout="close()">
+			</div>
+		</div>	
+		<div class="uid text am-text-truncate fl">{{item.uid}}</div>
+		<div class="nickname text am-text-truncate fl">{{item.nickname}}</div>
+		<div class="area text am-text-truncate fl">{{item.province}} {{item.city}}</div>
+		<span class="icon material-icons mail clickable fl" ng-click="mail($index)">mail</span>
+		<span class="icon material-icons delete clickable fl" ng-click="delete($index)">close</span>
+		<div class="cf"></div>
+	</li>
+	<div class="user-detail" ng-show="isDetailOpen">
+		<div>粉丝: {{curUser.follower_num}}</div>
+		<div>关注: {{curUser.following_num}}</div>
+		<div>简介: {{curUser.intro}}</div>			
+	</div>
+	<li class="pagination-wrapper">
+		<pagination cur="curPage" max="maxPage" refresh="refresh()"></pagination>
+	</li>
+</ul>
+<message-layer is-open="isLayerOpen" is-disabled="isDisabled" uid-to="uid_to"></message-layer>

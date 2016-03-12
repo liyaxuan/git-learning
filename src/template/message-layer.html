@@ -1,0 +1,19 @@
+<div class="layer" ng-show="isOpen">
+	<div class="box">
+		<header>发送消息<span class="icon material-icons clickable fr" ng-click="cancel()">close</span></header>
+		<div class="body">
+			<div class="item">
+				<div class="tag">发给</div>
+				<input class="input line" type="text" ng-model="uid_to" ng-disabled="isDisabled">
+			</div>
+			<div class="item content">
+				<div class="tag">内容</div>
+				<textarea class="input block" ng-model="message"></textarea>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="btn cancel clickable fr" ng-click="cancel()">取消</div>
+			<div class="btn ok clickable fr" ng-click="send()">确定</div>						
+		</div>
+	</div>
+</div>

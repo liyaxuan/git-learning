@@ -1,0 +1,106 @@
+.article-edit-scope {
+  background-color: #ffffff;
+}
+.article-edit-scope > .item {
+  padding: 16px 32px;
+  border-bottom: 1px solid #f4f4f4;
+}
+.article-edit-scope > .item.attachment {
+  padding-left: 54px;
+}
+.article-edit-scope > .item.test {
+  display: block;
+}
+.article-edit-scope > .item.sub {
+  border-bottom: none;
+}
+.article-edit-scope > .item.sub.last {
+  border-bottom: 1px solid #f4f4f4;
+}
+.article-edit-scope > .item .empty-warn {
+  line-height: 32px;
+  font-size: 20px;
+  color: #dd4f43;
+  display: inline-block;
+}
+.article-edit-scope > .item > .title {
+  width: 96px;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 16px;
+  border-left: 4px solid #1baf79;
+}
+.article-edit-scope > .item > .title.sub {
+  padding-left: 20px;
+  border-left: none;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.article-edit-scope > .item > .side {
+  margin-left: 116px;
+}
+.article-edit-scope > .item > .side.sized {
+  width: 320px;
+}
+.article-edit-scope > .item > .side > .tip {
+  line-height: 32px;
+  font-size: 12px;
+  color: #dd4f43;
+}
+.article-edit-scope > .item > .side > .tip.double-line {
+  line-height: 16px;
+}
+.article-edit-scope > .item > .side > .input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 12px;
+  height: 32px;
+  line-height: 16px;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+.article-edit-scope > .item > .side > .av-selector {
+  width: 64px;
+  line-height: 32px;
+  background-color: #e7eaeb;
+  font-size: 14px;
+  text-align: center;
+}
+.article-edit-scope > .item > .side > .av-selector.selected {
+  background-color: #1baf79;
+  color: #ffffff;
+}
+.article-edit-scope > .item .author-list.body {
+  margin-left: 116px;
+  margin-top: 16px;
+  padding: 16px;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+  border: 1px solid #dddddd;
+}
+.article-edit-scope > .item .author-list .img {
+  width: 32px;
+  height: 32px;
+  margin-right: 32px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.article-edit-scope > .item .author-list .name {
+  line-height: 32px;
+  font-size: 14px;
+}
+.article-edit-scope > .item .author-list > .item {
+  margin-bottom: 16px;
+}
+.article-edit-scope > .submit-btn {
+  margin: 16px 0 16px 148px;
+  padding: 0 16px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #1baf79;
+  border-radius: 2px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+}

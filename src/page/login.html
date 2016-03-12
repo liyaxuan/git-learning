@@ -1,0 +1,13 @@
+<div class="login-wrapper">
+    <header>寻声后台管理面板</header>
+    <div class="body">
+        <div class="tag">用户名<span class="tip fr" ng-show="isUidError">{{uidTip}}</span></div>
+        <input class="input first" type="text" ng-model="uid" >        
+        <div class="tag">密码<span class="tip fr" ng-show="isPwdError">{{pwdTip}}</span></div>
+        <input class="input" type="password" ng-model="pwd">                
+    </div>
+    <div class="bottom">
+        <div class="btn fl clickable" ng-click="login()">登录</div>
+        <div class="cf"></div>
+    </div>   
+</div>

@@ -1,0 +1,14 @@
+<ul class="pagination">
+    <li class="item turn fl clickable" ng-click="turn('backward')">
+    	<span class="icon material-icons">keyboard_arrow_left</span>
+    </li>
+    <li class="item number fl clickable">
+    	{{cur}} / {{max}}
+    </li>
+    <li class="item turn fl clickable" ng-click="turn('forward')">
+    	<span class="icon material-icons">keyboard_arrow_right</span>
+    </li>
+    <li class="item fl"><input type="text" ng-model="to"></li>
+    <li class="item btn fl clickable" ng-click="turn(to)">跳转</li>
+    <li class="cf"></li>
+</ul>

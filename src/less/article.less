@@ -1,0 +1,115 @@
+@import "common.less";
+
+.article-edit-scope { 
+	background-color: #ffffff;
+
+	>.item {
+		padding: 16px 32px;
+		border-bottom: 1px solid rgb(244, 244, 244);
+
+		&.attachment { padding-left: 54px; }
+		&.test { display: block; }
+
+		&.sub {
+			border-bottom: none;
+			&.last { border-bottom: 1px solid rgb(244, 244, 244); }
+		}
+
+		.empty-warn {
+			line-height: 32px;
+			font-size: 20px;
+			color: #dd4f43;
+			display: inline-block;
+		}
+
+		>.title {
+			width: 96px;
+			height: 32px;
+			line-height: 32px;
+			padding-left: 16px;
+			border-left: 4px solid #1baf79;
+
+			&.sub {
+				padding-left: 20px;
+				border-left: none;
+				font-size: 14px;
+				.gray-2();
+			}			
+		}
+		>.side {
+			margin-left: 116px;
+			&.sized {
+				width: 320px;
+			}
+
+			>.tip {
+				line-height: 32px;
+				font-size: 12px;
+				color: #dd4f43;
+				&.double-line { line-height: 16px; }
+			}
+
+			>.input {
+				width: 100%;
+				box-sizing: border-box;
+				font-size: 12px;
+				height: 32px;
+				line-height: 16px;
+				padding: 8px;
+				border: 1px solid rgb(221, 221, 221);
+			}
+
+			>.av-selector {
+				width: 64px;
+				line-height: 32px;
+				background-color: #e7eaeb;
+				font-size: 14px;
+				text-align: center;
+				&.selected {
+					background-color: #1baf79;
+					color: #ffffff;
+				}
+			}
+
+			
+		}
+		.author-list {
+			&.body {
+				margin-left: 116px;
+				margin-top: 16px;
+
+				padding: 16px;
+				background-color: rgb(248, 248, 248);
+				box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.16);
+				border: 1px solid #dddddd;		
+			}
+			.img {
+				width: 32px;
+				height: 32px;
+				margin-right: 32px;
+				border-radius: 50%;
+				.bg-img();
+			}
+			.name {
+				line-height: 32px;
+				font-size: 14px;
+			}
+	        >.item {
+	        	margin-bottom: 16px;
+	        } 
+		}
+	}
+
+	>.submit-btn {
+		margin: 16px 0 16px 148px;
+		padding: 0 16px;
+		height: 32px;
+		line-height: 32px;
+		background-color: #1baf79;
+		border-radius: 2px;
+		font-size: 14px;
+		text-align: center;
+		color: #ffffff;
+	}
+
+}

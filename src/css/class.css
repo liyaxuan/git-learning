@@ -1,0 +1,55 @@
+.class-wrapper > .input-wrapper {
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.class-wrapper > .input-wrapper > .input {
+  box-sizing: border-box;
+  widht: 192px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+  border: none;
+}
+.class-wrapper > .input-wrapper > .btn {
+  height: 32px;
+  padding: 0 16px;
+  line-height: 32px;
+  margin-right: 16px;
+  background-color: #1baf79;
+  text-align: center;
+  color: #ffffff;
+}
+.class-wrapper > .input-wrapper > .tab span {
+  line-height: 32px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.class-wrapper > .input-wrapper > .tab span.current {
+  color: #1baf79;
+}
+.class-wrapper > .class-list {
+  margin-right: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  font-size: 14px;
+}
+.class-wrapper > .class-list > header {
+  width: 272px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+  background-color: #333333;
+  color: #ffffff;
+}
+.class-wrapper > .class-list > .body > .class {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+}
+.class-wrapper > .class-list > .body > .class > .icon {
+  line-height: 32px;
+  font-size: 16px;
+}
+.class-wrapper > .class-list > .body > .class:hover {
+  background-color: #f8f8f8;
+}

@@ -1,0 +1,139 @@
+@import "common.less";
+
+@distance: 32px;
+
+@card-width: (@content-width/6)-@distance;
+@white-space: 4px;
+@img-width: (@card-width)-2*@white-space;
+
+@list-width: 4*@card-width+3*@distance;
+@form-width: 2*(@content-width/6)+@distance;
+
+.activity-scope {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+
+	.activity-header {
+		height: 32px;
+		line-height: 32px;
+		margin-bottom: 16px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #dddddd;
+		font-size: 20px;
+		>.btn {
+			height: 32px;
+			line-height: 32px;
+			padding: 0 16px;
+			background-color: #1baf79;
+			border-radius: 2px;
+			text-align: center;
+			font-size: 14px;
+			color: #ffffff;
+		}
+	}
+
+	>.list {
+		width: @list-width;
+
+		>.tool-bar-wrapper { margin-bottom: 32px; }
+
+		>.activity {
+			width: @card-width;
+			margin-right: @distance;
+			margin-bottom: @distance;
+
+			&.last { margin-right: 0; }
+			
+			>.img-wrapper {
+				margin-bottom: 8px;
+				padding: @white-space;
+				background-color: #ffffff;
+				box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
+				>.img {
+					with: @img-width;
+					height: 9*@img-width/16;
+					.bg-img();
+					>.cover {
+						width: 100%;
+						height: 100%;
+						background-color: rgba(0, 0, 0, 0.48);
+						opacity: 0;
+						transition: opacity 0.5s;
+						>.btn {				
+							width: 50%;
+							height: 100%;
+							line-height: 9*@card-width/16-2*@white-space;
+							color: #ffffff;
+							font-size: 24px;
+							text-align: center;
+							transition: background-color 0.5s;
+							&:hover {
+								background-color: rgba(0, 0, 0, 0.64);
+							}
+						}
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			.text {
+				margin-bottom: 8px;
+				padding: 0 @white-space;
+				height: 16px;
+				line-height: 16px;
+				font-size: 12px;
+				.gray-2();
+				&.name { 
+					font-size: 14px;
+					.gray-1();
+				}
+			}
+		}	
+	}
+	>.form {
+		box-sizing: border-box;
+		width: @form-width;
+		margin-left: @distance;
+		padding-left: @distance;
+		border-left: 1px solid #dddddd;
+
+		>.item {
+			margin-bottom: 16px;
+			>.title {
+				width: 64px;
+				height: 32px;
+				line-height: 32px;
+				font-size: 14px;
+			}
+			>.side {
+				margin-left: 64px;
+				>.input {
+					box-sizing: border-box;
+					height: 32px;
+					line-height: 30px;
+					padding: 0 8px;
+					border: 1px solid #dddddd;
+					font-size: 14px;
+					display: block;
+				}
+				>.intro {
+					box-sizing: border-box;
+					width: 100%;
+					height: 160px;
+					padding: 8px;
+					background-color: #ffffff;
+					border: 1px solid #dddddd;
+					font-size: 14px;
+					word-wrap: break-word;
+					display: block;
+				}
+
+				.process { background-color: #ffffff; }
+				.attachment { background-color: #ffffff; }
+			}
+		}
+	}
+}

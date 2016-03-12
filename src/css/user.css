@@ -1,0 +1,77 @@
+.user-list {
+  box-sizing: border-box;
+  width: 1152px;
+  padding: 0 16px;
+  background-color: #fcfcfc;
+  border: 1px solid #dddddd;
+}
+.user-list > .item {
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 32px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 14px;
+}
+.user-list > .item.header {
+  line-height: 16px;
+  border-bottom: 2px solid #1baf79;
+}
+.user-list > .item.last {
+  border-bottom: none;
+}
+.user-list > .item > .headimg {
+  width: 217.2px;
+  margin-right: 8px;
+}
+.user-list > .item > .headimg > .img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.user-list > .item > .uid {
+  width: 217.2px;
+  margin-right: 8px;
+}
+.user-list > .item > .nickname {
+  width: 217.2px;
+  margin-right: 8px;
+}
+.user-list > .item > .area {
+  width: 217.2px;
+  margin-right: 8px;
+}
+.user-list > .item > .operation {
+  width: 217.2px;
+}
+.user-list > .item > .text {
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+}
+.user-list > .item > .icon {
+  height: 32px;
+  line-height: 32px;
+  margin-right: 16px;
+  font-size: 16px;
+}
+.user-list > .item > .icon.delete:hover {
+  color: #eb7260;
+}
+.user-list > .item > .icon.mail:hover {
+  color: #29aba4;
+}
+.user-list > .user-detail {
+  line-height: 24px;
+  padding: 8px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
+  border: 1px solid #dddddd;
+  font-size: 12px;
+}
+.user-list > .pagination-wrapper {
+  margin: 16px 0;
+}

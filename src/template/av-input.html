@@ -1,0 +1,50 @@
+<div>
+	<div class="av audio" ng-show="isAudio">
+		<div class="item">
+			<div class="title fl">音频名<span class="empty-warn" ng-show="warn[7]">*</span></div>		
+			<div class="side sized">
+				<input class="input" type="text" ng-model="input.audio_name">
+			</div>
+			<div class="cf"></div>
+		</div>
+		<div class="item last">
+			<div class="title fl">音频文件<span class="empty-warn" ng-show="warn[6]">*</span></div>
+			<div class="side sized">
+				<div class="upload-wrapper">
+					<file-input file="input.audio" lock="lock" type="audio"></file-input>
+					<div class="attachment">
+						<audio class="player audio-player" controls="controls"></audio>
+					</div>			
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div class="av video" ng-show="!isAudio">
+		<div class="item">
+			<div class="title fl">视频名<span class="empty-warn" ng-show="warn[9]">*</span></div>
+			<div class="side sized">
+				<input class="input" type="text" ng-model="input.video_name">
+			</div>		
+			<div class="cf"></div>
+		</div>
+		<div class="item last" ng-show="isFile">
+			<div class="title selector selected clickable fl" ng-class="{'selected': isFile}" ng-click="select('code')">视频文件<span class="empty-warn" ng-show="warn[8]">*</span></div>
+			<div class="side sized">
+				<div class="upload-wrapper">
+					<file-input file="input.video" lock="lock" type="video" ng-show="isFile"></file-input>
+					<div class="attachment">
+						<video class="player video-player" controls="controls"></video>	
+					</div>				
+				</div>				
+			</div>
+			<div class="cf"></div>
+		</div>
+		<div class="item last" ng-show="!isFile">
+			<div class="title selector clickable fl" ng-class="{'selected': !isFile}" ng-click="select('file')">视频代码<span class="empty-warn" ng-show="warn[10]">*</span></div>
+			<div class="side sized">
+				<input class="input" type="text" ng-model="input.video_code">
+			</div>		
+			<div class="cf"></div>
+		</div>	
+	</div>	
+</div>

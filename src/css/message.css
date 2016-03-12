@@ -1,0 +1,85 @@
+.message-wrapper > .btn {
+  line-height: 16x;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  background-color: #1baf79;
+  border-radius: 2px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+.message-wrapper > .wrapper {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.message-wrapper > .wrapper > .inner-wrapper {
+  box-sizing: border-box;
+  width: 373.33333333px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .title {
+  line-height: 20px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #1baf79;
+  font-size: 20px;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-start;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .img {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .middle {
+  padding-right: 16px;
+  flex-grow: 2;
+  flex-shrink: 1;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .middle > .text.user {
+  height: 24px;
+  line-height: 16px;
+  font-size: 16px;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .middle > .text.content {
+  line-height: 24px;
+  font-size: 14px;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .end {
+  font-size: 0;
+  text-align: right;
+  flex-shrink: 0;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .end > .time {
+  height: 24px;
+  line-height: 16px;
+  font-size: 14px;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .end > .icon {
+  line-height: 24px;
+  font-size: 16px;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .message > .end > .icon:hover {
+  color: #eb7260;
+}
+.message-wrapper > .wrapper > .inner-wrapper > .pagination-wrapper {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #dddddd;
+}

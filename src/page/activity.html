@@ -1,0 +1,56 @@
+<div class="activity-scope">
+	<div class="list">
+		<header class="activity-header">已有活动<div class="btn fr clickable" ng-click="new()">新建活动</div></header>
+		<div class="tool-bar-wrapper">
+			<tool-bar search="search" author="false" refresh="refresh()"></tool-bar>
+		</div>	
+		<div class="cf"></div>
+		<div class="activity fl" ng-class="{'last': $index%4==3}" ng-repeat="item in list track by $index">
+			<div class="img-wrapper">
+				<div class="img" style="background-image: url({{item.thumbnail}})">
+					<div class="cover">
+						<span class="icon material-icons btn fl clickable" ng-click="edit($index)">mode_edit</span>
+						<span class="icon material-icons btn fl clickable" ng-click="delete($index)">delete</span>
+						<div class="cf"></div>
+					</div>
+				</div>
+			</div>
+			<div class="text name am-text-truncate">{{item.title}}</div>
+			<div class="text am-text-truncate">{{item.class_name}}</div>
+			<div class="text ">{{item.time | time: item.time}}</div>			
+		</div>	
+		<div class="cf"></div>
+		<pagination cur="search.page_num" max="maxPage" refresh="refresh()"></pagination>
+	</div>
+	<div class="form">
+		<header class="activity-header">{{formTitle}}<div class="btn fr clickable" ng-click="submit()">提交</div></header>
+		<div class="item">
+			<div class="title fl">标题</div>
+			<div class="side">
+				<input class="input" type="text" ng-model="input.title">
+			</div>			
+			<div class="cf"></div>
+		</div>
+		<div class="item">
+			<div class="title fl">封面</div>
+			<div class="side">
+				<img-input-oss file="input.thumbnail" lock="lock" class="side"></img-input-oss>
+			</div>
+			<div class="cf"></div>
+		</div>
+		<div class="item">
+			<div class="title fl">分类</div>
+			<div class="side">
+				<class-list search="input" type="search.entity_type"></class-list>
+			</div>		
+			<div class="cf"></div>			
+		</div>
+		<div class="item">
+			<div class="title fl">简介</div>
+			<div class="side">
+				<textarea class="intro" ng-model="input.main_content"></textarea>
+			</div>		
+			<div class="cf"></div>
+		</div>				
+	</div>
+</div>

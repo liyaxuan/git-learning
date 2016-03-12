@@ -1,0 +1,111 @@
+.banner-scope {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.banner-scope > .form {
+  width: 363.8px;
+  flex-shrink: 0;
+}
+.banner-scope > .form > .item {
+  margin-bottom: 16px;
+}
+.banner-scope > .form > .item > .title {
+  width: 64px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+}
+.banner-scope > .form > .item > .title > .tip {
+  font-size: 12px;
+  color: red;
+}
+.banner-scope > .form > .item > .side {
+  margin-left: 64px;
+}
+.banner-scope > .form > .item > .side > .banner-class-wrapper > .banner-class {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 8px;
+  background-color: #cccccc;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.banner-scope > .form > .item > .side > .banner-class-wrapper > .banner-class.selected {
+  color: #ffffff;
+  background-color: #5eb95e;
+}
+.banner-scope > .form > .item > .side > .input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 32px;
+  line-height: 30px;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  font-size: 14px;
+  outline: none;
+}
+.banner-scope > .form > .item > .side .process {
+  background-color: #ffffff;
+}
+.banner-scope > .form > .item > .side .attachment {
+  background-color: #ffffff;
+}
+.banner-scope > .list {
+  flex-grow: 2;
+}
+.banner-scope .banner-header {
+  margin-bottom: 16px;
+  height: 32px;
+  line-height: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 20px;
+}
+.banner-scope .banner-header > .btn {
+  width: 64px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #1baf79;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+}
+.banner-scope .multiple {
+  width: 659.2px;
+  margin-right: 32px;
+  padding-right: 32px;
+  border-right: 1px solid #dddddd;
+}
+.banner-scope .multiple > .banner {
+  width: 198.4px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+.banner-scope .multiple > .banner .img {
+  width: 198.4px;
+  height: 111.6px;
+  box-sizing: border-box;
+  padding: 4px;
+  background-color: #ffffff;
+}
+.banner-scope .multiple > .banner .img > .picture {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.banner-scope .multiple > .banner .title {
+  box-sizing: border-box;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 5px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+  word-break: break-all;
+}
+.banner-scope .multiple > .banner.last {
+  margin-right: 0;
+}

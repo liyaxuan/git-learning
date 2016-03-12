@@ -1,0 +1,51 @@
+<div class="message-wrapper">
+	<div class="btn clickable fl" ng-click="open()">发布公告</div>
+	<div class="cf"></div>
+	<div class="wrapper">
+		<div class="inner-wrapper" ng-controller="NoticeController">
+			<div class="title">公告</div>
+			<div class="message" ng-repeat="item in list">
+				<div class="middle">
+					<div class="text user">管理员</div>
+					<div class="text content">{{item.content}}</div>							
+				</div>
+				<div class="end">
+					<div class="time">{{item.time | MessageTime}}</div>
+					<span class="icon material-icons clickable" ng-click="delete($index)">close</span>
+				</div>	
+			</div>
+			<pagination cur="curPage" max="maxPage" refresh="refresh()" ></pagination>		
+		</div>
+		<div class="inner-wrapper" ng-controller="MessageReceiveController">
+			<div class="title">接收</div>
+			<div class="message" ng-repeat="item in list">
+				<div class="img" style="background-image: url({{item.user_from.headimg}})"></div>
+				<div class="middle">
+					<div class="text user">{{item.user_from.uid}}</div>
+					<div class="text content">{{item.content}}</div>							
+				</div>
+				<div class="end">
+					<div class="time">{{item.time | MessageTime}}</div>
+					<span class="icon material-icons clickable" ng-click="delete($index)">close</span>
+				</div>			
+			</div>
+			<pagination cur="curPage" max="maxPage" refresh="refresh()" ></pagination>	
+		</div>
+		<div class="inner-wrapper" ng-controller="MessageSendController">
+			<div class="title">发送</div>
+			<div class="message" ng-repeat="item in list">
+				<div class="img" style="background-image: url({{item.user_to.headimg}})"></div>
+				<div class="middle">
+					<div class="text user">{{item.user_to.uid}}</div>			
+					<div class="text content">{{item.content}}</div>							
+				</div>
+				<div class="end">
+					<div class="time">{{item.time | MessageTime}}</div>
+					<span class="icon material-icons clickable" ng-click="delete($index)">close</span>
+				</div>			
+			</div>
+			<pagination cur="curPage" max="maxPage" refresh="refresh()" ></pagination>	
+		</div>	
+	</div>
+</div>
+<message-layer is-open="isLayerOpen" is-disabled="isDisabled" uid-to="uid_to"></message-layer>

@@ -1,0 +1,70 @@
+<div class="article-edit-scope">
+	<div class="item">
+		<div class="title fl">标题<span class="empty-warn" ng-show="warn[0]">*</span></div>
+		<div class="side sized">
+			<input class="input" ng-model="input.title" type="text">
+		</div>
+		<div class="cf"></div>	
+	</div>
+	<div class="item">
+		<div class="title fl">封面<span class="empty-warn" ng-show="warn[1]">*</span></div>
+		<div class="side sized">
+			<img-input-oss file="input.thumbnail" lock="lock"></img-input-oss>
+		</div>
+		<div class="cf"></div>		
+	</div>
+	<div class="item">
+		<div class="title fl">分类<span class="empty-warn" ng-show="warn[2]">*</span></div>
+		<div class="side sized">
+			<class-list search="input" type="search.entity_type"></class-list>
+		</div>
+		<div class="cf"></div>							
+	</div>
+	<div class="item">
+		<div class="title fl">附件</div>
+		<div class="side">
+			<div class="av-selector clickable fl" ng-class="{'selected': isAudio }" ng-click="select('audio')">音频</div>
+			<div class="av-selector clickable fl" ng-class="{'selected': !isAudio }" ng-click="select('video')">视频</div>
+			<div class="cf"></div>
+		</div>
+		<div class="cf"></div>
+	</div>
+	<div class="item attachment">
+		<av-input input="input" lock="lock" warn="warn" is-audio="isAudio" video-choice="videoChoice"></av-input>
+	</div>
+	<div class="item">
+		<div class="title">作者</div>
+	</div>
+	<div class="item sub">
+		<div class="title sub fl">选择作者<span class="empty-warn" ng-show="warn[3]">*</span></div>
+		<div id="author-list-header" class="side author-list">
+			<div class="img clickable fl" style="background-image: url({{authorImg}})" ng-click="toggleAuthorList()"></div>
+			<div class="name clickable fl" ng-click="toggleAuthorList()">{{input.author_uid}}</div>
+			<div class="cf"></div>
+		</div>
+		<div id="author-list-body" class="author-list body fl" ng-show="isAuthorList">
+			<div class="item clickable" ng-repeat="a in author" ng-click="selectAuthor($index)" ng-class="{'last': $last}">
+				<div class="img fl" style="background-image: url({{a.headimg}})"></div>
+				<div class="name fl">{{a.uid}}</div>
+				<div class="cf"></div>					
+			</div>
+			<div class="pagination-wrapper"><pagination cur="curPage" max="maxPage" refresh="refreshAuthor()"></paination></div>
+		</div>
+		<div class="cf"></div>
+	</div>
+	<div class="item sub last">
+		<div class="title sub fl">作者简介<span class="empty-warn" ng-show="warn[4]">*</span></div>
+		<div class="side"><textarea id="author"></textarea></div>
+		<div class="cf"></div>
+	</div>		
+	<div class="item test">
+		<div class="title fl">正文<span class="empty-warn" ng-show="warn[5]">*</span></div>
+		<div class="side edit">
+			<textarea id="work"></textarea>
+		</div>
+		<div class="cf"></div>
+	</div>		
+	<div class="submit-btn clickable fl" ng-click="submit()">提交</div>
+	<div class="cf"></div>
+	
+</div>

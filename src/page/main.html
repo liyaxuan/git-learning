@@ -1,0 +1,16 @@
+<header class="main-header">
+    <div class="nav">
+        <a ui-sref="{{n.link}}" class="item fl" ng-class="{'current': $index==current}" ng-repeat="n in nav">
+            <span class="icon material-icons fl">{{n.icon}}</span>
+            <div class="text fl">{{n.text}}</div>
+            <div class="cf"></div>
+        </a>
+        <a ui-sref="login" class="item logout-btn fr">
+            <span class="fl icon material-icons">do_not_disturb</span>
+            <div class="text fl">退出</div>
+            <div class="cf"></div>
+        </a>
+        <a class="cf"></a>
+    </div>
+</header>
+<div class="main-body" ui-view></div>

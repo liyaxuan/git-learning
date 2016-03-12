@@ -1,0 +1,101 @@
+.work-edit-scope > .wrapper {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  overflow: hidden;
+}
+.work-edit-scope > .wrapper > .body-1 {
+  display: flex;
+  display: -webkit-flex;
+  align-items: stretch;
+}
+.work-edit-scope > .wrapper > .body-1 > .column {
+  box-sizing: border-box;
+  width: 383.33333333px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column.left {
+  border-right: 1px solid #dddddd;
+}
+.work-edit-scope > .wrapper > .body-1 > .column.right {
+  border-left: 1px solid #dddddd;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .header {
+  line-height: 32px;
+  padding: 0 16px;
+  border-bottom: 1px solid #dddddd;
+  font-size: 14px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .simditor {
+  border: none;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .pagination-wrapper {
+  padding: 0 16px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column .author-list.body {
+  padding: 16px;
+  background-color: #eeeeee;
+}
+.work-edit-scope > .wrapper > .body-1 > .column .author-list .item {
+  margin-bottom: 16px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column .author-list .img {
+  width: 32px;
+  height: 32px;
+  margin-right: 32px;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.work-edit-scope > .wrapper > .body-1 > .column .author-list .name {
+  line-height: 32px;
+  font-size: 14px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column .author-list > .header {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #dddddd;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .item {
+  padding: 0 16px;
+  font-size: 14px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .item > .title {
+  line-height: 32px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .item > .title .file-option {
+  line-height: 32px;
+  margin-left: 8px;
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .item > .title .file-option.selected {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.87);
+}
+.work-edit-scope > .wrapper > .body-1 > .column > .item > .input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 26px;
+  line-height: 16px;
+  padding: 4px;
+  border: 1px solid #dddddd;
+}
+.work-edit-scope > .wrapper > .body-2 > .header {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+.work-edit-scope > .wrapper > .body-2 > .simditor {
+  border: none;
+}
+.work-edit-scope > .btn {
+  width: 230px;
+  height: 48px;
+  line-height: 48px;
+  margin-top: 16px;
+  background-color: #1baf79;
+  border-radius: 2px;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+}
