@@ -91,7 +91,7 @@
   padding: 4px;
   background-color: #ffffff;
 }
-.banner-scope .multiple > .banner .img > .picture {
+.banner-scope .multiple > .banner .img .picture {
   width: 100%;
   height: 100%;
   background-size: cover;

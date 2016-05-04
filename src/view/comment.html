@@ -1,7 +1,7 @@
 <div class="comment-wrapper">
 	<div class="wrapper">
 		<div class="comment" ng-repeat="item in list">
-			<div class="img" style="background-image: url({{item.user.headimg}})"></div>
+			<div class="img" style="background-image: url({{item.user.headimg | url: item.user.headimg}}@!headimg-sm)"></div>
 			<div class="right">
 				<header>
 					<div class="fl">用户名: {{item.user.uid}}  昵称: {{item.user.nickname}}</div>
@@ -15,5 +15,4 @@
 		</div>
 		<pagination cur="curPage" max="maxPage" refresh="refresh()"></pagination>	
 	</div>
-	
 </div>

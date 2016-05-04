@@ -9,7 +9,7 @@
 	</li>
 	<li class="item" ng-repeat="item in list">
 		<div class="headimg fl">
-			<div class="img" style="background-image: url('{{item.headimg}}')" ng-mouseover="open($index)" ng-mouseout="close()">
+			<div class="img" style="background-image: url({{item.headimg | url: item.headimg}}@!headimg-sm)" ng-mouseover="open($index)" ng-mouseout="close()">
 			</div>
 		</div>	
 		<div class="uid text am-text-truncate fl">{{item.uid}}</div>

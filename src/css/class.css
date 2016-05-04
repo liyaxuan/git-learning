@@ -4,7 +4,7 @@
 }
 .class-wrapper > .input-wrapper > .input {
   box-sizing: border-box;
-  widht: 192px;
+  width: 200px;
   height: 32px;
   line-height: 32px;
   padding: 0 8px;
@@ -38,13 +38,15 @@
   height: 32px;
   line-height: 32px;
   padding: 0 8px;
-  background-color: #333333;
+  background-color: #3f3f3f;
   color: #ffffff;
 }
 .class-wrapper > .class-list > .body > .class {
   height: 32px;
   line-height: 32px;
   padding: 0 8px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.38);
 }
 .class-wrapper > .class-list > .body > .class > .icon {
   line-height: 32px;
@@ -52,4 +54,5 @@
 }
 .class-wrapper > .class-list > .body > .class:hover {
   background-color: #f8f8f8;
+  color: rgba(0, 0, 0, 0.87);
 }

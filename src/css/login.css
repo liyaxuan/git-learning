@@ -20,6 +20,10 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
   font-size: 20px;
 }
+.login-wrapper > header > .version {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
 .login-wrapper > .body {
   padding: 24px 32px;
   border-bottom: 1px solid #dddddd;

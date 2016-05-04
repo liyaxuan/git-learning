@@ -1,86 +1,78 @@
-var activityModule=angular.module("ActivityModule", ["ui.router", "MainModule", "AJAXModule"]);
+define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], function () {
+	angular.module("activityModu", ["ui.router", "componentModu", "ajaxModu"])
+	.controller("activityCtrl", ["$scope", "entityServ", "ajaxServ", "failServ", function ($scope, entityServ, ajaxServ, failServ) {
+		$scope.list=[];
+		$scope.curId="";
 
-activityModule.filter("time", function () {
-	return function (time) {
-		time=time.slice(time.indexOf("-")+1);
-		var pattern=/[0-9]+-[0-9]+/;
-		return pattern.exec(time)[0];
-	}
-});
+		$scope.search=entityServ.getSearchFormat();
+		$scope.search.entity_type="activity";
+		$scope.search.page_num=1;
+		$scope.maxPage=1;
 
-activityModule.controller("ActivityController", ["$scope", "Entity", "CommonAJAX", function ($scope, Entity, CommonAJAX) {
-	$scope.list=[];
-	$scope.curId="";
-
-	$scope.search=Entity.getSearchFormat();
-	$scope.search.entity_type="activity";
-	$scope.search.page_num=1;
-	$scope.maxPage=1;
-
-	$scope.formTitle="新建活动";
-	$scope.input=Entity.getPostFormat();
-	$scope.setInput=function (attribute, value) {
-		$scope.input[attribute]=value;
-	};
-
-	$scope.new=function () {
 		$scope.formTitle="新建活动";
-		$scope.input=Entity.getPostFormat();
+		$scope.input=entityServ.getPostFormat();
 
-		$(".file-input").find("img").attr("src", "img/img_pre.jpg");
-	};
+		$scope.new=function () {
+			$scope.curId="";
+			$scope.formTitle="新建活动";
+			$scope.input=entityServ.getPostFormat();
+		};
 
-	$scope.submit=function () {
-		if($scope.curId=="")
-			CommonAJAX.post("entity", "post", function () {
-				$scope.refresh();
-			}, function () {}, $scope.input, {
-				entity_type: "activity",
-				uid: $.cookie("admin-uid"),
-				token: $.cookie("admin-token")
-			});
-		else
-			CommonAJAX.put("entity", "put", $scope.refresh, function () {}, $scope.input, {
-				entity_type: "activity",
-				entity_id: $scope.curId,
-				uid: $.cookie("admin-uid"),
-				token: $.cookie("admin-token")
-			});
-	};
-
-	$scope.delete=function (index) {
-		if(confirm("确定要删除活动《"+$scope.list[index].title+"》?")) {
-			CommonAJAX.delete("entity", "delete", function () {
-					alert("删除成功");
+		$scope.submit=function () {
+			if($scope.curId=="")
+				ajaxServ.post("entity", "post", function () {
+					alert("新建成功");
 					$scope.refresh();
-				}, function () {}, {
+				}, failServ, $scope.input, {
 					entity_type: "activity",
-					entity_id: $scope.list[index].id,
 					uid: $.cookie("admin-uid"),
 					token: $.cookie("admin-token")
-			});
-		}
-	};
+				});
+			else
+				ajaxServ.put("entity", "put", function () {
+					alert("编辑成功");
+					$scope.refresh();
+				}, failServ, $scope.input, {
+					entity_type: "activity",
+					entity_id: $scope.curId,
+					uid: $.cookie("admin-uid"),
+					token: $.cookie("admin-token")
+				});
 
-	$scope.edit=function (index) {
-		$scope.formTitle="编辑活动";
+			$scope.new();
+		};
 
-		CommonAJAX.get("entity", "detail", function (data) {
-			$scope.input=data.entity;
-			$scope.curId=$scope.list[index].id;
+		$scope.delete=function (index) {
+			if(confirm("确定要删除活动《"+$scope.list[index].title+"》?")) {
+				ajaxServ.delete("entity", "delete", function () {
+						alert("删除成功");
+						$scope.refresh();
+					}, failServ, {
+						entity_type: "activity",
+						entity_id: $scope.list[index].id,
+						uid: $.cookie("admin-uid"),
+						token: $.cookie("admin-token")
+				});
+			}
+		};
 
-			$(".file-input").find("img").attr("src", $scope.input.thumbnail);			
-		}, function () {}, {
-			entity_type: "activity",
-			entity_id: $scope.list[index].id
-		});	
-	};
+		$scope.edit=function (index) {
+			$scope.formTitle="编辑活动";
 
-	$scope.refresh=function () {
-		CommonAJAX.get("entity", "get", function (data) {
-			$scope.list=data.entities;
-			$scope.maxPage=data.max_page;
-		}, function () {}, $scope.search);
-	};
+			ajaxServ.get("entity", "detail", function (data) {
+				$scope.input=data.entity;
+				$scope.curId=$scope.list[index].id;		
+			}, failServ, {
+				entity_type: "activity",
+				entity_id: $scope.list[index].id
+			});	
+		};
 
-}]);
+		$scope.refresh=function () {
+			ajaxServ.get("entity", "get", function (data) {
+				$scope.list=data.entities;
+				$scope.maxPage=data.max_page;
+			}, failServ, $scope.search);
+		};
+	}]);	
+});

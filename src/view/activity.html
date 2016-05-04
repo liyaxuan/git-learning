@@ -7,7 +7,7 @@
 		<div class="cf"></div>
 		<div class="activity fl" ng-class="{'last': $index%4==3}" ng-repeat="item in list track by $index">
 			<div class="img-wrapper">
-				<div class="img" style="background-image: url({{item.thumbnail}})">
+				<div class="img" style="background-image: url({{item.thumbnail | url: item.thumbnail}}@!card)">
 					<div class="cover">
 						<span class="icon material-icons btn fl clickable" ng-click="edit($index)">mode_edit</span>
 						<span class="icon material-icons btn fl clickable" ng-click="delete($index)">delete</span>
