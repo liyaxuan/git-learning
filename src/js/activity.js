@@ -1,6 +1,9 @@
 define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], function () {
 	angular.module("activityModu", ["ui.router", "componentModu", "ajaxModu"])
-	.controller("activityCtrl", ["$scope", "entityServ", "ajaxServ", "failServ", function ($scope, entityServ, ajaxServ, failServ) {
+	.controller("activityCtrl", ["$scope", "entityServ", "ajaxServ", "failServ", function ($scope, entityServ, ajaxServ, failServ) {		
+		$scope.isClass = false;
+		$scope.isAuthor = false;
+
 		$scope.list=[];
 		$scope.curId="";
 

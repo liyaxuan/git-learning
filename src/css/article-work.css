@@ -21,16 +21,6 @@
 .aw-list-header > .select > a.selected {
   color: #1baf79;
 }
-.aw-list-header > .btn {
-  height: 32px;
-  line-height: 32px;
-  padding: 0 16px;
-  background-color: #1baf79;
-  font-size: 16px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 14px;
-}
 .aw-list > .aw {
   width: 240px;
   margin-right: 64px;
@@ -57,7 +47,7 @@
   opacity: 0;
   transition: opacity 0.5s;
 }
-.aw-list > .aw > .img-wrapper > .img > .cover > .btn {
+.aw-list > .aw > .img-wrapper > .img > .cover > .icon {
   width: 50%;
   height: 100%;
   line-height: 127px;
@@ -66,10 +56,10 @@
   text-align: center;
   transition: background-color 0.5s;
 }
-.aw-list > .aw > .img-wrapper > .img > .cover > .btn.full {
+.aw-list > .aw > .img-wrapper > .img > .cover > .icon.full {
   width: 100%;
 }
-.aw-list > .aw > .img-wrapper > .img > .cover > .btn:hover {
+.aw-list > .aw > .img-wrapper > .img > .cover > .icon:hover {
   background-color: rgba(0, 0, 0, 0.64);
 }
 .aw-list > .aw > .img-wrapper > .img > .cover:hover {

@@ -12,11 +12,15 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'ajax'], function () {
 			}, {
 				link: "vwork-list",
 				icon: "whatshot",
-				text: "作品"
+				text: "精选"
+			}, {
+				link: "uwork-list",
+				icon: "filter_vintage",
+				text: "朗读"
 			}, {
 				link: "article-list",
 				icon: "description",
-				text: "文章"
+				text: "动态"
 			}, {
 				link: "class",
 				icon: "view_column",

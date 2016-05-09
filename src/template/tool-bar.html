@@ -4,12 +4,12 @@
 		<input class="input fl" type="text" ng-model="search.keyword">		
 		<div class="cf"></div>
 	</div>
-	<div class="item fl" ng-show="isAuthor">		
+	<div class="item fl" ng-if="isAuthor">		
 		<div class="tag fl">作者</div>
 		<input class="input fl" type="text" ng-model="search.author">
 		<div class="cf"></div>
 	</div>
-	<div class="item class-list-item fl" ng-show="isClass">
+	<div class="item class-list-item fl" ng-if="isClass">
 		<div class="tag class-list-tag fl">分类</div>
 		<class-list class="fl" search="search"></class-list>
 		<div class="cf"></div>

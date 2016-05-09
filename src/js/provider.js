@@ -5,21 +5,21 @@ define(['jquery-cookie'], function () {
 				var type=$state.current.data.entity_type;
 				switch (type) {
 					case "vwork":
-						$scope.title="作品列表";
+						$scope.title="精选";
 						$scope.isAuthor=true;
 						$scope.isClass=true;
 						$scope.isNew=true;
 						$scope.isSelect=true;
 						break;
 					case "uwork":
-						$scope.title="作品列表";
+						$scope.title="朗读";
 						$scope.isAuthor=true;
 						$scope.isClass=false;
 						$scope.isNew=false;
 						$scope.isSelect=true;
 						break;
 					case "article":
-						$scope.title="文章列表";
+						$scope.title="动态";
 						$scope.isAuthor=false;
 						$scope.isClass=true;
 						$scope.isNew=true;

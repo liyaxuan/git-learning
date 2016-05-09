@@ -6,14 +6,14 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 			return url;
 		}
 	})
-	.filter("time", function () {
+	.filter("workTime", function () {
 		return function (time) {
 			time=time.slice(time.indexOf("-")+1);
 			var pattern=/[0-9]+-[0-9]+/;
 			return pattern.exec(time)[0];
 		}
 	})
-	.filter("MessageTime", function () {
+	.filter("msgTime", function () {
 		return function (time) {
 			var lds=(new Date()).toLocaleDateString();
 			time=time.split(" ");
@@ -156,21 +156,21 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 					textarea: $(cssSelector),
 					toolbar: toolbar,
 					toolbarFloat: true,
-					defaultImage: "res/simditor-img.png",
+					defaultImage: 'res/simditor-img.png',
 					upload: {
 					    url: urlServ.upload,
 					    params: data,
-					    fileKey: "file",
+					    fileKey: 'file',
 					    connectionCount: 3,
-					    leaveConfirm: "正在上传文件"
+					    leaveConfirm: '正在上传文件'
 					},
 					pasteImage: false,
-					imageButton: ["upload"]
+					imageButton: ['upload']
 				});
 
-				simditor.on("pasting", function (e, $pasteContent) {
-					if($pasteContent.find("img").length > 0) {
-						alert("请使用图片上传功能, 而不要粘贴图片");
+				simditor.on('pasting', function (e, $pasteContent) {
+					if($pasteContent.find('img').length > 0) {
+						alert('请使用图片上传功能, 而不要粘贴图片');
 						return false;
 					}
 				});
@@ -206,7 +206,6 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 				isAttachment: "="
 			},
 			link: function (scope, element, attribute) {
-
 				$(element).find(".container").attr("id", "container-"+attribute.type);
 				$(element).find(".select").attr("id", "select-"+attribute.type);
 
@@ -367,10 +366,10 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 			scope: {
 				search: "=",
 				refresh: "&",
-				isAuthor: "=",
-				isClass: "="
+				isClass: '=',
+				isAuthor: '='
 			},
-			templateUrl: "src/template/tool-bar.html",
+			templateUrl: "src/template/tool-bar.html"
 		};
 	}])
 	.directive("classList", ["ajaxServ", function (ajaxServ) {
@@ -415,16 +414,15 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 			restrict: "E",
 			replace: true,
 			scope: {			
-				isOpen: "=isOpen",
-				isDisabled: "=isDisabled",
-				uid_to: "=uidTo",
+				isOpen: "=",
+				isDisabled: "=",
+				uidTo: "=",
 				refresh: "&"
 			},
 			templateUrl: "src/template/message-layer.html",
 			link: function (scope, element, attribute) {
-
 				scope.send=function () {
-					if(scope.uid_to=="所有人")
+					if(scope.uidTo == "所有人")
 						ajaxServ.post("notice", "post", function () {
 							alert("发送成功");
 							scope.cancel();
@@ -437,14 +435,13 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 						});					
 					else
 						ajaxServ.post("message", "post", function () {
-							alert("发送成功");
-							
+							alert("发送成功");						
 							scope.cancel();
 						}, function () {}, {
 							type: "message",
 							content: scope.message
 						}, {
-							"uid_to": scope.uid_to,
+							"uid_to": scope.uidTo,
 							"uid": $.cookie("admin-uid"),
 							"token": $.cookie("admin-token")
 						});

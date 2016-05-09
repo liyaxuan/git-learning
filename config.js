@@ -28,13 +28,9 @@ require.config({
         'user': 'src/js/user'
     },
     shim: {
-        'jquery': { export: 'jquery' },
         'jquery-cookie': ['jquery'],
-        'angular': { export: 'angular' },
         'angular-ui-router': ['angular'],
-        'angular-resource': ['angular'],
-        'md5': { export: 'hex_md5' },
-        'plupload': { export: 'plupload' }
+        'angular-resource': ['angular']
     }
 });
 

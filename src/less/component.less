@@ -32,17 +32,6 @@
 		width: 100%;
 		
 		>.btn {
-
-			padding: 0 16px;
-			height: 32px;
-			line-height: 32px;
-			position: relative;
-			background-color: #15ad66;
-			border-radius: 2px;
-			font-size: 14px;
-			text-align: center;
-			color: #ffffff;
-
 			>.mask {
 				width: 100%;
 				height: 100%;
@@ -452,6 +441,8 @@
 					flex-grow: 2;
 				}
 				>.tag {
+					height: 32px;
+					line-height: 32px;
 					margin-right: 16px;
 					font-size: 14px;
 					.gray-2();
@@ -461,7 +452,7 @@
 					border: 1px solid #dddddd;
 					flex-grow: 1;
 					&.line {
-						padding: 4px 8px;
+						padding: 7px 8px;
 						line-height: 16px;
 						font-size: 12px;
 					}
@@ -476,17 +467,14 @@
 			padding: 16px;
 			padding-top: 0;
 			>.btn {
-				width: 64px;
-				height: 32px;
-				line-height: 32px;
-				border-radius: 4px;
-				text-align: center;
-				font-size: 14px;
 				&.ok {
 					background-color: #1baf79;
 					color: #ffffff;
 				}
-				&.cancel { color: #1baf79; } 			
+				&.cancel {
+					background-color: transparent;
+					color: #1baf79;
+				} 			
 			}
 		}
 	}

@@ -118,7 +118,8 @@ define(['angular', 'angular-resource'], function () {
 							parameter={
 								uid: "@uid",
 								token: "@token",
-								page_num: "@page_num"
+								page_num: "@page_num",
+								keyword: "@keyword"
 							};					
 						}
 
@@ -188,20 +189,24 @@ define(['angular', 'angular-resource'], function () {
 						
 						break;
 					case "comment":
-						url= host +"/comment";
-						parameter={
-							page_num: "@page_num",
-							uid: "@uid",
-							token: "@token"
-						};
+						if(option == 'list') {
+							url= host +"/comment";
+							parameter={
+								page_num: "@page_num",
+								keyword: "@keyword",
+								uid: "@uid",
+								token: "@token"
+							};							
+						}
 
-						if(option=="one") {
+						else if(option=="one") {
 							url= host +"/comment/:entity_type/:entity_id";
 							parameter={
 								entity_type: "@entity_type",
 								entity_id: "@entity_id"			
 							};
 						}
+
 						else if(option=="delete") {
 							url= host +"/comment/:entity_type/:entity_id/:comment_id";
 							parameter={

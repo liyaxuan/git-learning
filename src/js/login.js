@@ -1,7 +1,7 @@
 define(['angular', 'angular-ui-router', 'jquery-cookie', 'md5', 'ajax'], function () {
 	angular.module("loginModu", ["ui.router", "ajaxModu"])
 	.controller("loginCtrl", ["$scope", "$state", "ajaxServ", "failServ", function ($scope, $state, ajaxServ, failServ) {
-		$scope.version="3月29日 19:07更新"
+		$scope.version="5月10日 0:56更新"
 
 		$scope.uid=$.cookie("admin-uid")||"";
 		$scope.pwd="";

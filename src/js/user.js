@@ -1,7 +1,6 @@
 define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], function () {
 	function MessageControllerProvider(boxType) {
 		function MessageController($scope, ajaxServ, failServ) {
-
 			$scope.list=[];
 			$scope.curPage=1;
 			$scope.maxPage=1;
@@ -49,8 +48,12 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 
 	angular.module("userModu", ["ui.router", "componentModu", "ajaxModu"])
 	.controller("userCtrl", ["$scope", "ajaxServ", "failServ", function ($scope, ajaxServ, failServ) {
+		$scope.isClass = false;
+		$scope.isAuthor = false;
+
 		$scope.list=[];
-		$scope.curPage=1;
+		$scope.curPage = 1;
+		$scope.search = { keyword: '' };
 		$scope.maxPage=1;
 
 		$scope.refresh=function () {
@@ -59,6 +62,7 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 				$scope.maxPage=data.max_page;				
 			}, failServ, {
 				page_num: $scope.curPage,
+				keyword: $scope.search.keyword,
 				uid: $.cookie("admin-uid"),
 				token: $.cookie("admin-token")
 			});
@@ -109,8 +113,9 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 	.controller("messageCtrl", ["$scope", function ($scope) {
 		$scope.isLayerOpen=false;
 		$scope.isDisabled=true;
-		$scope.uid_to="所有人";
+		
 		$scope.open=function () {
+			$scope.uidTo="所有人";
 			$scope.isLayerOpen=true;
 		};
 	}])
@@ -118,6 +123,8 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 	.controller("messageReceiveCtrl", MessageControllerProvider("inbox"))
 	.controller("messageSendCtrl", MessageControllerProvider("outbox"))
 	.controller("commentCtrl", ["$scope", "ajaxServ", "failServ", function ($scope, ajaxServ, failServ) {
+		$scope.search = { keyword: '' };
+
 		$scope.list=[];
 		$scope.curPage=1;
 		$scope.maxPage=1;
@@ -144,6 +151,7 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 				$scope.maxPage=data.max_page;
 			}, failServ, {
 				"page_num": $scope.curPage,
+				"keyword": $scope.search.keyword,
 				"uid": $.cookie("admin-uid"),
 				"token": $.cookie("admin-token")
 			});

@@ -2,20 +2,20 @@
     <div class="list">
         <div class="multiple">
             <div class="banner-header">首页Banner</div>
-            <div class="banner fl" ng-repeat="b in banner1 track by $index" ng-class="{'last': $index%3==2}">
-                <a href="{{b.url}}">
-                    <div class="img"><div class="picture" style="background-image: url({{b.img}})"></div></div>
-                    <div class="title am-text-truncate">{{b.title}}</div>
+            <div class="banner fl" ng-repeat="b in banner1 track by $index" ng-class="{ 'last': $index%3 == 2 }">
+                <a href="{{ b.url }}">
+                    <div class="img"><div class="picture" style="background-image: url({{ b.img | url: b.img }}@!card)"></div></div>
+                    <div class="title am-text-truncate">{{ b.title }}</div>
                 </a>
             </div>
             <div class="cf"></div> 
         </div>
         <div class="multiple">
-            <div class="banner-header">官方作品页Banner</div>
-            <div class="banner fl" ng-repeat="b in banner2 track by $index" ng-class="{'last': $index%3==2}">
-                <a href="{{b.url}}">
-                    <div class="img"><div class="picture" style="background-image: url({{b.img}})"></div></div>
-                    <div class="title am-text-truncate">{{b.title}}</div>
+            <div class="banner-header">精选Banner</div>
+            <div class="banner fl" ng-repeat="b in banner2 track by $index" ng-class="{ 'last': $index%3 == 2 }">
+                <a href="{{ b.url }}">
+                    <div class="img"><div class="picture" style="background-image: url({{ b.img | url: b.img }}@!card)"></div></div>
+                    <div class="title am-text-truncate">{{ b.title }}</div>
                 </a>
             </div> 
             <div class="cf"></div>       
@@ -23,8 +23,7 @@
     </div>
     <form class="form">
         <div class="banner-header">
-            添加Banner
-            <div class="btn fr clickable" ng-click="submit()">提交</div>
+            添加Banner<div class="btn fr clickable" ng-click="submit()">提交</div>
         </div>
         <div class="item">
             <div class="title fl">

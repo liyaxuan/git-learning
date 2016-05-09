@@ -23,17 +23,6 @@
   box-sizing: border-box;
   width: 100%;
 }
-.file-input > .container > .btn {
-  padding: 0 16px;
-  height: 32px;
-  line-height: 32px;
-  position: relative;
-  background-color: #15ad66;
-  border-radius: 2px;
-  font-size: 14px;
-  text-align: center;
-  color: #ffffff;
-}
 .file-input > .container > .btn > .mask {
   width: 100%;
   height: 100%;
@@ -415,6 +404,8 @@
   flex-grow: 2;
 }
 .layer > .box > .body > .item > .tag {
+  height: 32px;
+  line-height: 32px;
   margin-right: 16px;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.54);
@@ -425,7 +416,7 @@
   flex-grow: 1;
 }
 .layer > .box > .body > .item > .input.line {
-  padding: 4px 8px;
+  padding: 7px 8px;
   line-height: 16px;
   font-size: 12px;
 }
@@ -437,19 +428,12 @@
   padding: 16px;
   padding-top: 0;
 }
-.layer > .box > .footer > .btn {
-  width: 64px;
-  height: 32px;
-  line-height: 32px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 14px;
-}
 .layer > .box > .footer > .btn.ok {
   background-color: #1baf79;
   color: #ffffff;
 }
 .layer > .box > .footer > .btn.cancel {
+  background-color: transparent;
   color: #1baf79;
 }
 .layer .loading {

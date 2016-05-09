@@ -1,17 +1,18 @@
-<div class="class-wrapper">	
+<div class="class-wrapper">
+	<div class="page-header margin-16"><div class="title">分类</div></div>
 	<div class="input-wrapper">
 		<input type="text" class="input fl" ng-model="className">
 		<div class="btn fl clickable" ng-click="submit()">新建分类</div>
 		<div class="tab fl">
-			<span class="clickable" ng-class="{'current': current=='vwork'}" ng-click="select('vwork')">官方作品</span>
+			<span class="clickable" ng-class="{'current': current=='vwork'}" ng-click="select('vwork')">精选</span>
 			/
-			<span class="clickable" ng-class="{'current': current=='article'}" ng-click="select('article')">官方文章</span>
+			<span class="clickable" ng-class="{'current': current=='article'}" ng-click="select('article')">动态</span>
 		</div>
 		<div class="cf"></div>
 	</div>
 	<div class="cf"></div>
 	<div class="class-list fl">
-	    <header>官方作品分类</header>
+	    <header>精选</header>
 	    <div class="body">
 		    <div class="class" ng-class="{'last': $last}" ng-repeat="c in vworkClass track by $index">
 		        <span class="text fl am-text-truncate">{{c}}</span>
@@ -21,7 +22,7 @@
 	    </div>
 	</div>
 	<div class="class-list fl">
-	    <header>官方文章分类</header>
+	    <header>动态</header>
 	    <div class="body">
 		    <div class="class" ng-repeat="c in articleClass track by $index">
 		        <span class="text fl am-text-truncate">{{c}}</span>

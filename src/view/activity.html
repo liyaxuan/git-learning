@@ -2,22 +2,22 @@
 	<div class="list">
 		<header class="activity-header">已有活动<div class="btn fr clickable" ng-click="new()">新建活动</div></header>
 		<div class="tool-bar-wrapper">
-			<tool-bar search="search" author="false" refresh="refresh()"></tool-bar>
+			<tool-bar search="search" refresh="refresh()" is-class="isClass" is-author="isAuthor"></tool-bar>
 		</div>	
 		<div class="cf"></div>
 		<div class="activity fl" ng-class="{'last': $index%4==3}" ng-repeat="item in list track by $index">
 			<div class="img-wrapper">
 				<div class="img" style="background-image: url({{item.thumbnail | url: item.thumbnail}}@!card)">
 					<div class="cover">
-						<span class="icon material-icons btn fl clickable" ng-click="edit($index)">mode_edit</span>
-						<span class="icon material-icons btn fl clickable" ng-click="delete($index)">delete</span>
+						<span class="icon material-icons fl clickable" ng-click="edit($index)">mode_edit</span>
+						<span class="icon material-icons fl clickable" ng-click="delete($index)">delete</span>
 						<div class="cf"></div>
 					</div>
 				</div>
 			</div>
 			<div class="text name am-text-truncate">{{item.title}}</div>
 			<div class="text am-text-truncate">{{item.class_name}}</div>
-			<div class="text ">{{item.time | time: item.time}}</div>			
+			<div class="text ">{{item.time | workTime: item.time}}</div>			
 		</div>	
 		<div class="cf"></div>
 		<pagination cur="search.page_num" max="maxPage" refresh="refresh()"></pagination>
@@ -34,7 +34,7 @@
 		<div class="item">
 			<div class="title fl">封面</div>
 			<div class="side">
-				<img-input-oss file="input.thumbnail" lock="lock" class="side"></img-input-oss>
+				<img-input file="input.thumbnail" lock="lock" class="side"></img-input>
 			</div>
 			<div class="cf"></div>
 		</div>

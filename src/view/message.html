@@ -1,5 +1,8 @@
+<div class="page-header margin-16">
+	<div class="title fl">消息</div>
+	<div class="btn clickable fr" ng-click="open()">发布公告</div>
+</div>
 <div class="message-wrapper">
-	<div class="btn clickable fl" ng-click="open()">发布公告</div>
 	<div class="cf"></div>
 	<div class="wrapper">
 		<div class="inner-wrapper" ng-controller="noticeCtrl">
@@ -10,7 +13,7 @@
 					<div class="text content">{{item.content}}</div>							
 				</div>
 				<div class="end">
-					<div class="time">{{item.time | MessageTime}}</div>
+					<div class="time">{{item.time | msgTime}}</div>
 					<span class="icon material-icons clickable" ng-click="delete($index)">close</span>
 				</div>	
 			</div>
@@ -19,13 +22,13 @@
 		<div class="inner-wrapper" ng-controller="messageReceiveCtrl">
 			<div class="title">接收</div>
 			<div class="message" ng-repeat="item in list">
-				<div class="img" style="background-image: url({{item.user_from.headimg | url: item.user_from.headimg}}@!headimg-sm)"></div>
+				<div class="img" style="background-image: url({{item.user_from.headimg}}@!headimg-sm)"></div>
 				<div class="middle">
 					<div class="text user">{{item.user_from.nickname}}</div>
 					<div class="text content">{{item.content}}</div>							
 				</div>
 				<div class="end">
-					<div class="time">{{item.time | MessageTime}}</div>
+					<div class="time">{{item.time | msgTime}}</div>
 					<span class="icon material-icons clickable" ng-click="delete($index)">close</span>
 				</div>			
 			</div>
@@ -34,13 +37,13 @@
 		<div class="inner-wrapper" ng-controller="messageSendCtrl">
 			<div class="title">发送</div>
 			<div class="message" ng-repeat="item in list">
-				<div class="img" style="background-image: url({{item.user_to.headimg | url: item.user_to.headimg}}@!headimg-sm)"></div>
+				<div class="img" style="background-image: url({{item.user_to.headimg}}@!headimg-sm)"></div>
 				<div class="middle">
 					<div class="text user">{{item.user_to.nickname}}</div>			
 					<div class="text content">{{item.content}}</div>							
 				</div>
 				<div class="end">
-					<div class="time">{{item.time | MessageTime}}</div>
+					<div class="time">{{item.time | msgTime}}</div>
 					<span class="icon material-icons clickable" ng-click="delete($index)">close</span>
 				</div>			
 			</div>
@@ -48,4 +51,4 @@
 		</div>	
 	</div>
 </div>
-<message-layer is-open="isLayerOpen" is-disabled="isDisabled" uid-to="uid_to" refresh="refresh()"></message-layer>
+<message-layer is-open="isLayerOpen" is-disabled="isDisabled" uid-to="uidTo" refresh="refresh()"></message-layer>
