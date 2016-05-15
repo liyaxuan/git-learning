@@ -21,7 +21,7 @@
   border-bottom: none;
 }
 .user-list > .item > .headimg {
-  width: 217.2px;
+  width: 179.66666667px;
   margin-right: 8px;
 }
 .user-list > .item > .headimg > .img {
@@ -32,19 +32,23 @@
   background-position: 50% 50%;
 }
 .user-list > .item > .uid {
-  width: 217.2px;
+  width: 179.66666667px;
   margin-right: 8px;
 }
 .user-list > .item > .nickname {
-  width: 217.2px;
+  width: 179.66666667px;
   margin-right: 8px;
 }
 .user-list > .item > .area {
-  width: 217.2px;
+  width: 179.66666667px;
+  margin-right: 8px;
+}
+.user-list > .item > .time {
+  width: 179.66666667px;
   margin-right: 8px;
 }
 .user-list > .item > .operation {
-  width: 217.2px;
+  width: 179.66666667px;
 }
 .user-list > .item > .text {
   height: 32px;

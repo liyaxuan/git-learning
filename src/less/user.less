@@ -2,7 +2,7 @@
 
 @user-item-width: @content-width;
 @user-item-margin: 8px;
-@user-pure-width: ((@user-item-width)-32-2)-4*@user-item-margin;
+@user-pure-width: ((@user-item-width)-32-2)-5*@user-item-margin;
 
 .user-list {
 	box-sizing: border-box;
@@ -28,7 +28,7 @@
 		&.last { border-bottom: none; }
 
 		>.headimg { 
-			width: 0.20*@user-pure-width;
+			width: (1/6)*@user-pure-width;
 			margin-right: @user-item-margin;
 			>.img {
 				width: 32px;
@@ -39,22 +39,27 @@
 		}
 
 		>.uid { 
-			width: 0.20*@user-pure-width;
+			width: (1/6)*@user-pure-width;
 			margin-right: @user-item-margin; 
 		}
 
 		>.nickname { 
-			width: 0.20*@user-pure-width;
+			width: (1/6)*@user-pure-width;
 			margin-right: @user-item-margin; 
 		}
 
 		>.area { 
-			width: 0.20*@user-pure-width;
+			width: (1/6)*@user-pure-width;
+			margin-right: @user-item-margin;
+		}
+
+		>.time {
+			width: (1/6)*@user-pure-width;
 			margin-right: @user-item-margin;
 		}
 
 		>.operation { 
-			width: 0.20*@user-pure-width;
+			width: (1/6)*@user-pure-width;
 		}
 
 		>.text {

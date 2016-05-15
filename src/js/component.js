@@ -369,7 +369,13 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 				isClass: '=',
 				isAuthor: '='
 			},
-			templateUrl: "src/template/tool-bar.html"
+			templateUrl: "src/template/tool-bar.html",
+			link: function (scope) {
+				scope.get = function () {
+					scope.search.page_num = 1;
+					scope.refresh();
+				}
+			}
 		};
 	}])
 	.directive("classList", ["ajaxServ", function (ajaxServ) {
@@ -396,8 +402,8 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 					scope.search.class_name="";
 				};
 
-				var type=scope.search.entity_type==undefined?scope.type:scope.search.entity_type;
-				type=type=="activity"?"article":type;
+				var type = scope.search.entity_type ==undefined ? scope.type : scope.search.entity_type;
+				type = type == "activity" ? "article" : type;
 
 				ajaxServ.get("class", 0, function (data) {
 					scope.list=[];

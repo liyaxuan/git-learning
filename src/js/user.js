@@ -52,8 +52,7 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 		$scope.isAuthor = false;
 
 		$scope.list=[];
-		$scope.curPage = 1;
-		$scope.search = { keyword: '' };
+		$scope.search = { keyword: '', page_num: 1 };
 		$scope.maxPage=1;
 
 		$scope.refresh=function () {
@@ -61,7 +60,7 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 				$scope.list=data.users;
 				$scope.maxPage=data.max_page;				
 			}, failServ, {
-				page_num: $scope.curPage,
+				page_num: $scope.search.page_num,
 				keyword: $scope.search.keyword,
 				uid: $.cookie("admin-uid"),
 				token: $.cookie("admin-token")
@@ -123,10 +122,8 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 	.controller("messageReceiveCtrl", MessageControllerProvider("inbox"))
 	.controller("messageSendCtrl", MessageControllerProvider("outbox"))
 	.controller("commentCtrl", ["$scope", "ajaxServ", "failServ", function ($scope, ajaxServ, failServ) {
-		$scope.search = { keyword: '' };
-
 		$scope.list=[];
-		$scope.curPage=1;
+		$scope.search = { keyword: '', page_num: 1 };
 		$scope.maxPage=1;
 
 		$scope.delete=function (index) {
@@ -150,7 +147,7 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'component', 'ajax'], f
 					$scope.list[i].link="http://xunsheng90.com/entity/" + $scope.list[i].entity_type + "/" + $scope.list[i].entity_id;
 				$scope.maxPage=data.max_page;
 			}, failServ, {
-				"page_num": $scope.curPage,
+				"page_num": $scope.search.page_num,
 				"keyword": $scope.search.keyword,
 				"uid": $.cookie("admin-uid"),
 				"token": $.cookie("admin-token")

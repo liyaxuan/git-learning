@@ -10,6 +10,7 @@
 		<div class="uid fl">用户名</div>
 		<div class="nickname fl">昵称</div>
 		<div class="area fl">地区</div>
+		<div class="time fl">时间</div>
 		<div class="operation fl">操作</div>
 		<div class="cf"></div>
 	</li>
@@ -21,6 +22,7 @@
 		<div class="uid text am-text-truncate fl">{{item.uid}}</div>
 		<div class="nickname text am-text-truncate fl">{{item.nickname}}</div>
 		<div class="area text am-text-truncate fl">{{item.province}} {{item.city}}</div>
+		<div class="time text am-text-truncate fl">{{item.time}}</div>
 		<span class="icon material-icons mail clickable fl" ng-click="mail($index)">mail</span>
 		<span class="icon material-icons delete clickable fl" ng-click="delete($index)">close</span>
 		<div class="cf"></div>
@@ -31,7 +33,7 @@
 		<div>简介: {{curUser.intro}}</div>			
 	</div>
 	<li class="pagination-wrapper">
-		<pagination cur="curPage" max="maxPage" refresh="refresh()"></pagination>
+		<pagination cur="search.page_num" max="maxPage" refresh="refresh()"></pagination>
 	</li>
 </ul>
 <message-layer is-open="isLayerOpen" is-disabled="isDisabled" uid-to="uid_to"></message-layer>
