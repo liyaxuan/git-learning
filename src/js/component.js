@@ -1,5 +1,22 @@
 define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function () {
 	angular.module('componentModu', [])
+	.filter('title', function () {
+		return function (title) {
+			switch (title) {
+				case 'comment':
+					return '评论';
+				case 'article':
+					return '动态';
+				case 'uwork':
+					return '朗读';
+				case 'vwork':
+					return '精选';
+				case 'user':
+					return '用户';
+			}			
+		}
+
+	})
 	.filter("url", function () {
 		return function (url) {
 			url=url.replace(/media/, "img");

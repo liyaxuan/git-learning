@@ -34,12 +34,27 @@ define(['jquery-cookie'], function () {
 				$scope.search.page_num=1;
 				$scope.maxPage=1;
 
-				$scope.delete=function (index) {
-					if(confirm("确定删除《"+$scope.list[index].title+"》?")) {
+				$scope.download = function (index) {
+					ajaxServ.get('entity', 'detail', function (data) {
+						var url = data.entity.media.url;
+						var xhr = new XMLHttpRequest();
+						xhr.open('get', url);
+						xhr.onerror = function () {
+							alert('服务端响应码 ' + xhr.status + ' 发生了错误');
+						}
+						xhr.send();
+					}, failServ, {
+						entity_type: $scope.search.entity_type,
+						entity_id: $scope.list[index].id						
+					});
+				}
+
+				$scope.delete = function (index) {
+					if(confirm("确定删除《" + $scope.list[index].title + "》?")) {
 						ajaxServ.delete("entity", "delete", function () {
 								alert("删除成功");
 								$scope.refresh();
-							}, function () {}, {
+							}, failServ, {
 								entity_type: $scope.search.entity_type,
 								entity_id: $scope.list[index].id,
 								uid: $.cookie("admin-uid"),
@@ -53,7 +68,7 @@ define(['jquery-cookie'], function () {
 						$scope.list=data.entities;
 						$scope.max=data.max_page;
 
-					}, function () {}, $scope.search);
+					}, failServ, $scope.search);
 				};
 
 				$scope.searchList=function () {
@@ -207,7 +222,7 @@ define(['jquery-cookie'], function () {
 									release();
 								}
 							});
-						}, function () {}, {
+						}, failServ, {
 							"entity_type": config.type,
 							"entity_id": toParams.id,
 							"uid": $.cookie("admin-uid"),

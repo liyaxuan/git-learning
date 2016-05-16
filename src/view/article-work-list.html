@@ -12,8 +12,9 @@
             <div class="img" style="background-image: url({{ item.thumbnail | url: item.thumbnail }}@!card)">
                 <div class="cover">
                     <a ui-sref="{{ search.entity_type }}-edit({ id: list[$index].id })" class="icon material-icons fl clickable"
-                    ng-hide="search.entity_type=='uwork'">mode_edit</a>
-                    <span ng-class="{ 'full': search.entity_type == 'uwork' }" class="icon material-icons fl clickable" ng-click="delete($index)">delete</span>
+                    ng-if="search.entity_type != 'uwork'">mode_edit</a>
+                    <span class="icon material-icons fl clickable" ng-if="search.entity_type == 'uwork'" ng-click="download($index)">file_download</span>
+                    <span class="icon material-icons fl clickable" ng-click="delete($index)">delete</span>
                     <div class="cf"></div>
                 </div>
             </div>

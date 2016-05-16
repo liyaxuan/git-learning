@@ -1,0 +1,20 @@
+<div class="data-container">
+	<header class="header">统计数据</header>
+	<div class="body">
+		<div class="item fl" ng-class="{ 'last': $index == 4 }" ng-repeat="(key, value) in data">
+			<header class="header">{{ key | title: key }}</header>
+			<div class="key fl">
+				<div class="segement">今天</div>
+				<div class="segement">昨天</div>
+				<div class="segement last">总共</div>
+			</div>
+			<div class="value fr">
+				<div class="segement">{{value.today}}</div>
+				<div class="segement">{{value.yesterday}}</div>
+				<div class="segement last">{{value.total}}</div>				
+			</div>
+			<div class="cf"></div>
+		</div>
+		<div class="cf"></div>		
+	</div>
+</div>

@@ -34,7 +34,7 @@ define(['angular', 'angular-resource'], function () {
 				var parameter={};
 				switch (resource) {
 					case "login": 
-						url= host +"/user/login";
+						url = host + "/user/login";
 						parameter={};
 						
 						if(option=="update")
@@ -45,7 +45,7 @@ define(['angular', 'angular-resource'], function () {
 							
 						break;
 					case "auth":
-						url= host +"/auth";
+						url = host + "/auth";
 						parameter={
 							uid: "@uid",
 							token: "@token"
@@ -53,8 +53,16 @@ define(['angular', 'angular-resource'], function () {
 
 
 						break;
+					case 'meta':
+						url = host + '/meta';
+						parameter={
+							uid: "@uid",
+							token: "@token"
+						};
+
+						break;
 					case "banner":
-						url= host +"/banner/:whichpage";
+						url = host + "/banner/:whichpage";
 						parameter={
 							whichpage: "@whichpage"
 						};
@@ -68,7 +76,7 @@ define(['angular', 'angular-resource'], function () {
 
 						break;
 					case "entity":
-						url= host +"/entity/:entity_type";
+						url = host + "/entity/:entity_type";
 						parameter={
 							entity_type: "@entity_type",
 							class_name: "@class_name",

@@ -1,6 +1,6 @@
-define(['angular', 'angular-ui-router', 'jquery-cookie', 'ajax'], function () {
-	angular.module("mainModu", ["ui.router", "ajaxModu"])
-	.controller("mainCtrl", ["$scope", "$state", "$interval", "ajaxServ", function ($scope, $state, $interval, ajaxServ) {
+define(['angular', 'angular-ui-router', 'jquery-cookie', 'ajax', 'component'], function () {
+	angular.module("mainModu", ["ui.router", "ajaxModu", 'componentModu'])
+	.controller("mainCtrl", ["$scope", "$state", "$interval", "ajaxServ", 'failServ', function ($scope, $state, $interval, ajaxServ, failServ) {
 		$scope.nav=[{
 				link: "home",
 				icon: "home",
@@ -65,10 +65,27 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'ajax'], function () {
 		$interval(function () {
 			ajaxServ.put("login", "update", function (data) {
 				$.cookie("admin-token", data.token, { path: "/" });
-			}, function () {}, {}, {
+			}, failServ, {}, {
 				"uid": $.cookie("admin-uid"),
 				"token": $.cookie("admin-token")
 			});
 		}, 240*1000);
+	}])
+	.controller('homeCtrl', ['$scope', 'ajaxServ', 'failServ', function ($scope, ajaxServ, failServ) {
+		ajaxServ.get('meta', '', function (data) {
+			delete data.status;	
+			for(var x in data.entity) {
+				data[x] = {};
+				for(var y in data.entity[x]) {
+					data[x][y] = data.entity[x][y];
+				}
+			}
+			delete data.entity;
+			console.log(data);
+			$scope.data = data;
+		}, failServ, {
+			"uid": $.cookie("admin-uid"),
+			"token": $.cookie("admin-token")			
+		});
 	}]);
 });

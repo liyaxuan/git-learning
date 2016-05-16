@@ -1,0 +1,44 @@
+.data-container {
+	background-color: #ffffff;
+	border: 1px solid #e7e7eb;
+	>.header {
+		height: 32px;
+		line-height: 32px;
+		padding: 0 16px;
+		background-color: #f4f5f9;
+		border-bottom: 1px solid #e7e7eb;
+
+		font-size: 14px;
+	}
+	>.body {
+		padding: 16px 0;
+		>.item {
+			box-sizing: border-box;
+			width: 20%;
+			border-right: 1px solid #e7e7eb;
+			
+			&.last { border-right: none; }
+
+			>.header {
+				height: 24px;
+				line-height: 24px;
+				padding-bottom: 8px;
+				text-align: center;
+				font-size: 20px;
+			}
+
+			>.key, >.value {
+				width: 107px;
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.54);
+				>.segement {
+					padding-bottom: 4px;
+					&.last { padding-bottom: 0; }
+				}
+			}
+
+			>.key { text-align: right; }
+			>.value { text-align: left; }
+		}
+	}
+}

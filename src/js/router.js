@@ -15,7 +15,8 @@ define(['angular', 'angular-ui-router', 'ajax', 'login', 'main', 'banner', 'work
 		}).state("home", {
 			parent: "main",
 			url: "/home",
-			templateUrl: "src/view/home.html"
+			templateUrl: "src/view/home.html",
+			controller: 'homeCtrl'
 		}).state("banner", {
 			parent: "main",
 			url: "/banner",

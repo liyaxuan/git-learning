@@ -1,0 +1,50 @@
+.data-container {
+  background-color: #ffffff;
+  border: 1px solid #e7e7eb;
+}
+.data-container > .header {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 16px;
+  background-color: #f4f5f9;
+  border-bottom: 1px solid #e7e7eb;
+  font-size: 14px;
+}
+.data-container > .body {
+  padding: 16px 0;
+}
+.data-container > .body > .item {
+  box-sizing: border-box;
+  width: 20%;
+  border-right: 1px solid #e7e7eb;
+}
+.data-container > .body > .item.last {
+  border-right: none;
+}
+.data-container > .body > .item > .header {
+  height: 24px;
+  line-height: 24px;
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 20px;
+}
+.data-container > .body > .item > .key,
+.data-container > .body > .item > .value {
+  width: 107px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.data-container > .body > .item > .key > .segement,
+.data-container > .body > .item > .value > .segement {
+  padding-bottom: 4px;
+}
+.data-container > .body > .item > .key > .segement.last,
+.data-container > .body > .item > .value > .segement.last {
+  padding-bottom: 0;
+}
+.data-container > .body > .item > .key {
+  text-align: right;
+}
+.data-container > .body > .item > .value {
+  text-align: left;
+}
