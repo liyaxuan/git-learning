@@ -85,7 +85,13 @@ define(['angular', 'angular-ui-router', 'jquery-cookie', 'ajax', 'component'], f
 			$scope.data = data;
 		}, failServ, {
 			"uid": $.cookie("admin-uid"),
-			"token": $.cookie("admin-token")			
+			"token": $.cookie("admin-token")
 		});
+		var a = document.querySelector('#download');
+		$scope.download = function (option) {
+			var url = 'http://sign.xunsheng90.com/excel/' + option + '?uid=' + $.cookie('admin-uid') + '?token=' + $.cookie('admin-token');
+			a.setAttribute('href', url);
+			a.click();
+		}
 	}]);
 });

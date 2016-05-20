@@ -1,5 +1,10 @@
 <div class="data-container">
-	<header class="header">统计数据</header>
+	<header class="header">
+		统计数据
+		<div class="btn clickable fr" ng-click="download('uwork')">下载朗读数据</div>
+		<div class="btn first clickable fr" ng-click="download('user')">下载用户数据</div>
+		<div class="cf"></div>
+	</header>
 	<div class="body">
 		<div class="item fl" ng-class="{ 'last': $index == 4 }" ng-repeat="(key, value) in data">
 			<header class="header">{{ key | title: key }}</header>
@@ -18,3 +23,4 @@
 		<div class="cf"></div>		
 	</div>
 </div>
+<a id="download" href=""></a>

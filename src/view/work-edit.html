@@ -43,12 +43,15 @@
 			<div class="cf"></div>
 		</div>
 		<div id="author-list-body" class="author-list body fl" ng-show="isAuthorList">
+			<div class="tool-bar-wrapper" style="margin-bottom: 16px;">
+				<tool-bar search="search" refresh="refreshAuthor()" is-class="isClass" is-author="isAuthor"></tool-bar>
+			</div>
 			<div class="item clickable" ng-repeat="a in author" ng-click="selectAuthor($index)" ng-class="{'last': $last}">
 				<div class="img fl" style="background-image: url({{a.headimg}})"></div>
 				<div class="name fl">{{a.uid}}</div>
 				<div class="cf"></div>					
 			</div>
-			<div class="pagination-wrapper"><pagination cur="curPage" max="maxPage" refresh="refreshAuthor()"></paination></div>
+			<div class="pagination-wrapper"><pagination cur="search.page_num" max="maxPage" refresh="refreshAuthor()"></paination></div>
 		</div>
 		<div class="cf"></div>
 	</div>

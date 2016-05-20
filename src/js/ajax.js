@@ -1,7 +1,7 @@
 define(['angular', 'angular-resource'], function () {
 	var host = "http://api.xunsheng90.com";
 	var upload = "http://temp.xunsheng90.com";
-	var sign = "http://sign.xunsheng90.com/oss-sign"
+	var sign = "http://sign.xunsheng90.com/oss-sign";
 
 	var header = {
 		get: {
@@ -54,11 +54,24 @@ define(['angular', 'angular-resource'], function () {
 
 						break;
 					case 'meta':
-						url = host + '/meta';
+						url = "http://api.xunsheng90.com/meta";
+						
 						parameter={
 							uid: "@uid",
 							token: "@token"
 						};
+
+						break;
+					case 'download':
+						parameter={
+							uid: "@uid",
+							token: "@token"
+						};
+
+						if(option == 'uwork')
+							url = 'http://sign.xunsheng90.com/excel/uwork';
+						else if(option == 'user')
+							url = 'http://sign.xunsheng90.com/excel/user';
 
 						break;
 					case "banner":

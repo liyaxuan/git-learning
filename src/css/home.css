@@ -5,10 +5,13 @@
 .data-container > .header {
   height: 32px;
   line-height: 32px;
-  padding: 0 16px;
+  padding: 8px 16px;
   background-color: #f4f5f9;
   border-bottom: 1px solid #e7e7eb;
   font-size: 14px;
+}
+.data-container > .header > .btn.first {
+  margin-right: 16px;
 }
 .data-container > .body {
   padding: 16px 0;

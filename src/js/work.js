@@ -3,17 +3,25 @@ define(['provider', 'angular', 'jquery-cookie', 'component', 'angular-ui-router'
 		type: "vwork",
 		link: "vwork-list",
 		inject: function (scope, ajaxServ, failServ) {
-			scope.curPage=1;
+			scope.search = {
+				page_num: 1,
+				keyword: ''
+			};
+
 			scope.maxPage=1;
 			scope.author=[];
 			scope.isAuthorList=false;
+
+			scope.isAuthor = false;
+			scope.isClass = false;
 
 			scope.refreshAuthor=function () {
 				ajaxServ.get("user", "list", function (data) {
 					scope.author=data.users;
 					scope.maxPage=data.max_page;
 				}, failServ, {
-					page_num: scope.curPage,
+					page_num: scope.search.page_num,
+					keyword: scope.search.keyword,
 					uid: $.cookie("admin-uid"),
 					token: $.cookie("admin-token")
 				});	

@@ -3,7 +3,7 @@
     <a class="btn fr" ui-sref="{{ search.entity_type }}-edit({ id: '' })" ng-show="isNew">新建</a>
     <div class="cf"></div>
 </header>
-<div class="tool-bar-wrapper">
+<div class="tool-bar-wrapper" style="margin-bottom: 16px;">
     <tool-bar search="search" refresh="refresh()" is-class="isClass" is-author="isAuthor"></tool-bar>
 </div>
 <div class="aw-list">
@@ -31,3 +31,4 @@
     <div class="cf"></div>
     <pagination cur="search.page_num" max="max" refresh="refresh()"></pagination>
 </div>
+<a id="download" href=""></a>
