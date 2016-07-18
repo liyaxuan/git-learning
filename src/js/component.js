@@ -395,7 +395,7 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 			}
 		};
 	}])
-	.directive("classList", ["ajaxServ", function (ajaxServ) {
+	.directive("classList", ["ajaxServ", "failServ", function (ajaxServ, failServ) {
 		return {
 			restrict: "AE",
 			replace: true,
@@ -419,16 +419,16 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 					scope.search.class_name="";
 				};
 
-				var type = scope.search.entity_type ==undefined ? scope.type : scope.search.entity_type;
-				type = type == "activity" ? "article" : type;
+				var type = scope.search.entity_type || scope.type;
+				type = type == "activity" ? "article" : 'vwork';
 
 				ajaxServ.get("class", 0, function (data) {
 					scope.list=[];
 					for(var i=0;i<data.class_name.length;i++)
 						scope.list.push(data.class_name[i]);
-				}, function () {}, {
+				}, failServ, {
 					entity_type: type
-				});			
+				});		
 			}
 		};
 	}])
