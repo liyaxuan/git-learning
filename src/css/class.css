@@ -27,13 +27,14 @@
 .class-wrapper > .input-wrapper > .tab span.current {
   color: #1baf79;
 }
-.class-wrapper > .class-list {
+.class-wrapper .class-list {
   margin-right: 16px;
+  margin-bottom: 16px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   font-size: 14px;
 }
-.class-wrapper > .class-list > header {
+.class-wrapper .class-list > header {
   width: 272px;
   height: 32px;
   line-height: 32px;
@@ -41,18 +42,18 @@
   background-color: #3f3f3f;
   color: #ffffff;
 }
-.class-wrapper > .class-list > .body > .class {
+.class-wrapper .class-list > .body > .class {
   height: 32px;
   line-height: 32px;
   padding: 0 8px;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.38);
 }
-.class-wrapper > .class-list > .body > .class > .icon {
+.class-wrapper .class-list > .body > .class > .icon {
   line-height: 32px;
   font-size: 16px;
 }
-.class-wrapper > .class-list > .body > .class:hover {
+.class-wrapper .class-list > .body > .class:hover {
   background-color: #f8f8f8;
   color: rgba(0, 0, 0, 0.87);
 }

@@ -241,18 +241,18 @@ define(['angular', 'angular-resource'], function () {
 
 						break;							
 					case "class":
-						url= host +"/class/:entity_type";
-						parameter={ entity_type: "@entity_type" };
-						if(option==1) {
-							parameter={
+						url = host + "/class/:entity_type";
+						parameter = { entity_type: "@entity_type" };
+						if(option == 'post') {
+							parameter = {
 								entity_type: "@entity_type",
 								uid: "@uid",
 								token: "@token"
 							};
 						}
-						else if(option==2) {
-							url= host +"/class/:entity_type/:class_name";
-							parameter={
+						else if(option == 'delete') {
+							url = host + "/class/:entity_type/:class_name";
+							parameter = {
 								entity_type: "@entity_type",
 								uid: "@uid",
 								token: "@token",

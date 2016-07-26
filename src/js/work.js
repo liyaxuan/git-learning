@@ -88,31 +88,30 @@ define(['provider', 'angular', 'jquery-cookie', 'component', 'angular-ui-router'
 	.controller("awListCtrl", provider.list())
 	.controller("workEditCtrl", provider.edit(config))
 	.controller("classCtrl", ["$scope", "ajaxServ", "failServ", function ($scope, ajaxServ, failServ) {
-		$scope.refresh=function () {
-			ajaxServ.get("class", 0, function (data) {
-				$scope.vworkClass=[];
-				for(var i=0;i<data.class_name.length;i++)
-					$scope.vworkClass.push(data.class_name[i]);
-			}, failServ, { entity_type: "vwork" });
+		$scope.refresh = function () {
+			ajaxServ.get("class", 'get', function (data) {
 
-			ajaxServ.get("class", 0, function (data) {
-				$scope.articleClass=[];
-				for(var i=0;i<data.class_name.length;i++)
-					$scope.articleClass.push(data.class_name[i]);
-			}, failServ, { entity_type: "article" });
+				$scope.className = data.class_name;
+
+				console.log($scope.className)
+			}, failServ, { 'entity_type': $scope.current });
 		};
 
-		$scope.select=function (type) {
-			$scope.current=type;
+		$scope.select = function (type) {
+			$scope.current = type;
+			$scope.refresh();
 		};
 
-		$scope.submit=function () {
-			if(!$scope.className) {
+		$scope.submit = function () {
+			if(!$scope.classNameInput) {
 				alert("分类不能为空值");
 			}
 			else
-				ajaxServ.post("class", 1, $scope.refresh, failServ, {
-					class_name: $scope.className
+				ajaxServ.post("class", 'post', function () {
+					$scope.refresh();
+					alert('新建成功');
+				}, failServ, {
+					class_name: $scope.classNameInput
 				},{
 					entity_type: $scope.current,
 					uid: $.cookie("admin-uid"),
@@ -120,20 +119,22 @@ define(['provider', 'angular', 'jquery-cookie', 'component', 'angular-ui-router'
 				});
 		};
 
-		$scope.delete=function (type, className) {
-			if(confirm("确认删除分类\""+className+"\"?"))
-				ajaxServ.delete("class", 2, $scope.refresh, failServ, {
+		$scope.delete = function (type, classNameToDelete) {
+			if(confirm("确认删除分类\"" + classNameToDelete + "\"?"))
+				ajaxServ.delete("class", 'delete', function () {
+					$scope.refresh();
+					alert('删除成功');
+				}, failServ, {
 					entity_type: type,
 					uid: $.cookie("admin-uid"),
 					token: $.cookie("admin-token"),
-					class_name: className
+					class_name: classNameToDelete
 				});
 		};
 
-		$scope.className="";
-		$scope.current="vwork";
-		$scope.vworkClass=[];
-		$scope.articleClass=[];
+		$scope.classNameInput = "";
+		$scope.current = "vwork";
+		$scope.className = [];
 
 		$scope.refresh();
 	}]);	

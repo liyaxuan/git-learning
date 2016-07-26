@@ -32,22 +32,38 @@ define(['angular', 'jquery-cookie', 'ajax', 'plupload', 'simditor'], function ()
 	})
 	.filter("msgTime", function () {
 		return function (time) {
-			var lds=(new Date()).toLocaleDateString();
-			time=time.split(" ");
-			day=time[0].split("-");
-			lds=lds.split("/");
+			var lds = (new Date()).toLocaleDateString();
+			time = time.split(" ");
+			day = time[0].split("-");
+			lds = lds.split("/");
 
-			var result=true;
-			for(var i=0;i<3;i++)
-				result=result&&(parseInt(lds[i])==parseInt(day[i]));
+			var result = true;
+			for(var i = 0; i < 3; i++)
+				result = result && (parseInt(lds[i]) == parseInt(day[i]));
 
 			if(result)
-				return time[1].slice(0, time[1].length-3);
+				return time[1].slice(0, time[1].length - 3);
 			else
-				if(lds[0]==day[0])
+				if(lds[0] == day[0])
 					return time[0].slice(5, time[0].length);
 				else
 					return time[0];
+		}
+	})
+	.filter('className', function () {
+		return function (className) {
+			switch (className) {
+				case 'vwork':
+					return '精选';
+				case 'uwork_tag0':
+					return '朗读分类(1)';
+				case 'uwork_tag1':
+					return '朗读分类(2)';
+				case 'uwork_tag2':
+					return '朗读分类(3)';
+				case 'article':
+					return '动态';
+			}
 		}
 	})
 	.service("entityServ", function () {
